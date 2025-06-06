@@ -1,0 +1,27 @@
+ninja_required_version = 1.3
+cxx = c++
+
+cflags = -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -fPIC -I/data/xiaodong/env/PVD/lib/python3.10/site-packages/torch/include -I/data/xiaodong/env/PVD/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/data/xiaodong/env/PVD/lib/python3.10/site-packages/torch/include/TH -I/data/xiaodong/env/PVD/lib/python3.10/site-packages/torch/include/THC -I/data/xiaodong/env/PVD/include -I/usr/include/python3.10 -c
+post_cflags = -O3 -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_cpu -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++17
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+
+
+
+
+build /data/xiaodong/WNNC-main/ext/build/temp.linux-x86_64-cpython-310/wn_treecode/wn_treecode_cpu/wn_treecode_cpu_kernels.o: compile /data/xiaodong/WNNC-main/ext/wn_treecode/wn_treecode_cpu/wn_treecode_cpu_kernels.cpp
+build /data/xiaodong/WNNC-main/ext/build/temp.linux-x86_64-cpython-310/wn_treecode/wn_treecode_cpu/wn_treecode_cpu_torch_interface.o: compile /data/xiaodong/WNNC-main/ext/wn_treecode/wn_treecode_cpu/wn_treecode_cpu_torch_interface.cpp
+build /data/xiaodong/WNNC-main/ext/build/temp.linux-x86_64-cpython-310/wn_treecode/wn_treecode_cpu/wn_treecode_cpu_treeutils.o: compile /data/xiaodong/WNNC-main/ext/wn_treecode/wn_treecode_cpu/wn_treecode_cpu_treeutils.cpp
+
+
+
+
+
+
+

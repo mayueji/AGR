@@ -1,0 +1,4 @@
+/home1/mayj/PGR-NEW/pgrchange/PGRchange/build/CMakeFiles/edit_cache.dir
+/home1/mayj/PGR-NEW/pgrchange/PGRchange/build/CMakeFiles/PGRExportQuery.dir
+/home1/mayj/PGR-NEW/pgrchange/PGRchange/build/CMakeFiles/rebuild_cache.dir
+/home1/mayj/PGR-NEW/pgrchange/PGRchange/build/CMakeFiles/PGRLoadQuery.dir
